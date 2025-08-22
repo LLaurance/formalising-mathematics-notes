@@ -29,10 +29,10 @@ as to which tactic to use.
      - ``apply h`` (if goal is ``False``)
    * - ``P ∧ Q``
      - ``constructor``
-     - ``cases' h with hP hQ``
+     - ``obtain ⟨hP, hQ⟩ := h``
    * - ``P ↔ Q``
      - ``constructor``
-     - ``rw h`` (or ``cases' h with h1 h2``)
+     - ``rw h`` (or ``obtain ⟨h1, h2⟩ := h``)
    * - ``P ∨ Q``
      - ``left`` or ``right``
      - ``cases' h with hP hQ``
@@ -41,4 +41,4 @@ as to which tactic to use.
      - ``specialize h x``
    * - ``∃ (a : X), ...``
      - ``use x``
-     - ``cases' h with x hx``
+     - ``obtain ⟨x, hx⟩ := h``
